@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  arhAirport
+
+  Created by Никита Иванов on 16.04.2022.
+  
+*/
+
+"Arrival.Title" = "Прилёт";
+"Departure.Title" = "Вылет";
+"Weather.Title" = "Погода";
+"Contact.Title" = "Контакты";
+
+"Today" = "Сегодня";
+"Yesterday" = "Вчера";
+"Tommorow" = "Завтра";
