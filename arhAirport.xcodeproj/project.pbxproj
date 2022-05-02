@@ -15,12 +15,16 @@
 		A80623EC280AF4A70092F852 /* WeatherCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80623EB280AF4A70092F852 /* WeatherCellModel.swift */; };
 		A80623EF280AFD510092F852 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80623EE280AFD510092F852 /* ContactModel.swift */; };
 		A80623F3280B07460092F852 /* ToolbarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80623F2280B07460092F852 /* ToolbarMenu.swift */; };
+		A8067011281FC86600407498 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A8067010281FC86600407498 /* Alamofire */; };
 		A808B4FA280AC2C6006E7C44 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A808B4F9280AC2C6006E7C44 /* Constants.swift */; };
 		A808B4FD280AC9C8006E7C44 /* DepartureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A808B4FC280AC9C8006E7C44 /* DepartureDetailView.swift */; };
 		A808B4FF280AC9D2006E7C44 /* DepartureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A808B4FE280AC9D2006E7C44 /* DepartureDetailViewModel.swift */; };
 		A808B501280AC9FE006E7C44 /* DepartureCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A808B500280AC9FE006E7C44 /* DepartureCellModel.swift */; };
 		A808B503280ACCD7006E7C44 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A808B502280ACCD7006E7C44 /* Localizable.strings */; };
 		A84D0C51281BDBF6002A424B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A84D0C50281BDBF6002A424B /* .gitignore */; };
+		A8546871281C068300B73191 /* ResolverRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546870281C068300B73191 /* ResolverRegister.swift */; };
+		A8546873281C06CF00B73191 /* AirportApiModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546872281C06CF00B73191 /* AirportApiModule.swift */; };
+		A8546875281C06F100B73191 /* WeatherApiModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546874281C06F100B73191 /* WeatherApiModule.swift */; };
 		A86C65DA27D5EFFB00FE38A6 /* arhAirportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C65CA27D5EFF900FE38A6 /* arhAirportApp.swift */; };
 		A86C65DC27D5EFFB00FE38A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C65CB27D5EFF900FE38A6 /* ContentView.swift */; };
 		A86C65EE27D5F1F700FE38A6 /* DepartureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C65ED27D5F1F700FE38A6 /* DepartureView.swift */; };
@@ -32,6 +36,10 @@
 		A86C65FB27D5F44600FE38A6 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C65FA27D5F44600FE38A6 /* ContactView.swift */; };
 		A86C65FD27D5F44E00FE38A6 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C65FC27D5F44E00FE38A6 /* ContactViewModel.swift */; };
 		A86C660127D63D2D00FE38A6 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C660027D63D2D00FE38A6 /* RootTabView.swift */; };
+		A8A26BF2281EADA200B5365B /* Persistant in Frameworks */ = {isa = PBXBuildFile; productRef = A8A26BF1281EADA200B5365B /* Persistant */; };
+		A8A26BF7281FB82700B5365B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A8A26BF6281FB82700B5365B /* Realm */; };
+		A8A26BF9281FB82700B5365B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A8A26BF8281FB82700B5365B /* RealmSwift */; };
+		A8A26BFC281FB8A400B5365B /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = A8A26BFB281FB8A400B5365B /* Resolver */; };
 		A8AC6CD527F83EB300CD0AFC /* ArrivalCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC6CD427F83EB300CD0AFC /* ArrivalCellModel.swift */; };
 		A8AC6CD827F8485C00CD0AFC /* ArrivalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC6CD727F8485C00CD0AFC /* ArrivalDetailView.swift */; };
 		A8AC6CDA27F8486500CD0AFC /* ArrivalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC6CD927F8486500CD0AFC /* ArrivalDetailViewModel.swift */; };
@@ -52,6 +60,9 @@
 		A808B502280ACCD7006E7C44 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A808B51B280AD4FB006E7C44 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A84D0C50281BDBF6002A424B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A8546870281C068300B73191 /* ResolverRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolverRegister.swift; sourceTree = "<group>"; };
+		A8546872281C06CF00B73191 /* AirportApiModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportApiModule.swift; sourceTree = "<group>"; };
+		A8546874281C06F100B73191 /* WeatherApiModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiModule.swift; sourceTree = "<group>"; };
 		A86C65CA27D5EFF900FE38A6 /* arhAirportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arhAirportApp.swift; sourceTree = "<group>"; };
 		A86C65CB27D5EFF900FE38A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A86C65D127D5EFFB00FE38A6 /* arhAirport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arhAirport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +75,7 @@
 		A86C65FA27D5F44600FE38A6 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		A86C65FC27D5F44E00FE38A6 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		A86C660027D63D2D00FE38A6 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		A8A26BEF281EAD9C00B5365B /* arhAirport--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "arhAirport--iOS--Info.plist"; sourceTree = "<group>"; };
 		A8AC6CD427F83EB300CD0AFC /* ArrivalCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalCellModel.swift; sourceTree = "<group>"; };
 		A8AC6CD727F8485C00CD0AFC /* ArrivalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDetailView.swift; sourceTree = "<group>"; };
 		A8AC6CD927F8486500CD0AFC /* ArrivalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDetailViewModel.swift; sourceTree = "<group>"; };
@@ -74,6 +86,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8067011281FC86600407498 /* Alamofire in Frameworks */,
+				A8A26BF9281FB82700B5365B /* RealmSwift in Frameworks */,
+				A8A26BF7281FB82700B5365B /* Realm in Frameworks */,
+				A8A26BFC281FB8A400B5365B /* Resolver in Frameworks */,
+				A8A26BF2281EADA200B5365B /* Persistant in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,14 +163,35 @@
 			path = DepartureDetail;
 			sourceTree = "<group>";
 		};
+		A854686E281C05BA00B73191 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A854686F281C05CA00B73191 /* DI */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A854686F281C05CA00B73191 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				A8546870281C068300B73191 /* ResolverRegister.swift */,
+				A8546872281C06CF00B73191 /* AirportApiModule.swift */,
+				A8546874281C06F100B73191 /* WeatherApiModule.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		A86C65C427D5EFF800FE38A6 = {
 			isa = PBXGroup;
 			children = (
+				A8A26BEF281EAD9C00B5365B /* arhAirport--iOS--Info.plist */,
+				A854686E281C05BA00B73191 /* Core */,
 				A80623D2280ADA540092F852 /* swiftgen.yml */,
 				A84D0C50281BDBF6002A424B /* .gitignore */,
 				A86C65F127D5F28100FE38A6 /* Flow */,
 				A86C65EA27D5F15C00FE38A6 /* Resources */,
 				A86C65D227D5EFFB00FE38A6 /* Products */,
+				A8A26BF0281EADA200B5365B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +272,13 @@
 			path = Flow;
 			sourceTree = "<group>";
 		};
+		A8A26BF0281EADA200B5365B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A8AC6CD627F8484B00CD0AFC /* ArrivalDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +306,11 @@
 			);
 			name = "arhAirport (iOS)";
 			packageProductDependencies = (
+				A8A26BF1281EADA200B5365B /* Persistant */,
+				A8A26BF6281FB82700B5365B /* Realm */,
+				A8A26BF8281FB82700B5365B /* RealmSwift */,
+				A8A26BFB281FB8A400B5365B /* Resolver */,
+				A8067010281FC86600407498 /* Alamofire */,
 			);
 			productName = "arhAirport (iOS)";
 			productReference = A86C65D127D5EFFB00FE38A6 /* arhAirport.app */;
@@ -291,6 +341,9 @@
 			);
 			mainGroup = A86C65C427D5EFF800FE38A6;
 			packageReferences = (
+				A8A26BF5281FB82700B5365B /* XCRemoteSwiftPackageReference "realm-swift" */,
+				A8A26BFA281FB8A400B5365B /* XCRemoteSwiftPackageReference "Resolver" */,
+				A806700F281FC86600407498 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = A86C65D227D5EFFB00FE38A6 /* Products */;
 			projectDirPath = "";
@@ -350,6 +403,7 @@
 				A80623E1280ADD210092F852 /* swiftgen.yml in Sources */,
 				A8AC6CD527F83EB300CD0AFC /* ArrivalCellModel.swift in Sources */,
 				A86C65F527D5F38B00FE38A6 /* ArrivalViewModel.swift in Sources */,
+				A8546871281C068300B73191 /* ResolverRegister.swift in Sources */,
 				A86C660127D63D2D00FE38A6 /* RootTabView.swift in Sources */,
 				A80623F3280B07460092F852 /* ToolbarMenu.swift in Sources */,
 				A80623EC280AF4A70092F852 /* WeatherCellModel.swift in Sources */,
@@ -358,7 +412,9 @@
 				A86C65DA27D5EFFB00FE38A6 /* arhAirportApp.swift in Sources */,
 				A808B501280AC9FE006E7C44 /* DepartureCellModel.swift in Sources */,
 				A808B4FF280AC9D2006E7C44 /* DepartureDetailViewModel.swift in Sources */,
+				A8546873281C06CF00B73191 /* AirportApiModule.swift in Sources */,
 				A86C65FB27D5F44600FE38A6 /* ContactView.swift in Sources */,
+				A8546875281C06F100B73191 /* WeatherApiModule.swift in Sources */,
 				A86C65F327D5F38100FE38A6 /* ArrivalView.swift in Sources */,
 				A80623EF280AFD510092F852 /* ContactModel.swift in Sources */,
 				A86C65F927D5F3AD00FE38A6 /* WeatherViewModel.swift in Sources */,
@@ -500,6 +556,7 @@
 				DEVELOPMENT_TEAM = SG9C53KBMD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "arhAirport--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -531,6 +588,7 @@
 				DEVELOPMENT_TEAM = SG9C53KBMD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "arhAirport--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -575,6 +633,60 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A806700F281FC86600407498 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		A8A26BF5281FB82700B5365B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		A8A26BFA281FB8A400B5365B /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A8067010281FC86600407498 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A806700F281FC86600407498 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		A8A26BF1281EADA200B5365B /* Persistant */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Persistant;
+		};
+		A8A26BF6281FB82700B5365B /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8A26BF5281FB82700B5365B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		A8A26BF8281FB82700B5365B /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8A26BF5281FB82700B5365B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		A8A26BFB281FB8A400B5365B /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8A26BFA281FB8A400B5365B /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A86C65C527D5EFF800FE38A6 /* Project object */;
 }
