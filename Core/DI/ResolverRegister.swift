@@ -6,10 +6,11 @@
 //
 
 import Resolver
-//
-//extension Resolver: ResolverRegistering {
-//    public static func registerAllServices() {
-//        
-//    }
-//}
+
+extension Resolver: ResolverRegistering {
+    public static func registerAllServices() {
+        registerService()
+        registerRepository()
+    }
+}
 

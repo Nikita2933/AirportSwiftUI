@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Persistant
 
 struct ArrivalView: View {
-    @StateObject var viewModel = ArrivalViewModel()
+    @StateObject var viewModel: ArrivalViewModel
     @State var isOpenDetail: Bool = false
-    @State var selectedDetailModel: ArrivalCellModel?
+    @State var selectedDetailModel: ArrivalModel?
 
     var body: some View {
         VStack {
@@ -38,7 +39,7 @@ struct ArrivalView: View {
 }
 
 struct ArrivalCell: View {
-    let model: ArrivalCellModel
+    let model: ArrivalModel
 
     var body: some View {
         HStack {
@@ -57,10 +58,9 @@ struct ArrivalCell: View {
 
 struct ArrivalPageView: View {
     @State var tabSelection: PageTabView
-    let tomorrow = ArrivalView()
-    let today = ArrivalView()
-    let yesterday = ArrivalView()
-
+    let tomorrow = ArrivalView(viewModel: ArrivalViewModel(time: .tomorrow))
+    let today = ArrivalView(viewModel: ArrivalViewModel(time: .today))
+    let yesterday = ArrivalView(viewModel: ArrivalViewModel(time: .yesterday))
     @State var offset: CGFloat = 0
 
     var body: some View {
@@ -127,7 +127,6 @@ struct ArrivalPageView: View {
     }
 
     func getDayOffset() -> CGFloat {
-        print(  -(UIScreen.main.bounds.width / 3))
         return (UIScreen.main.bounds.width / 3)
     }
 

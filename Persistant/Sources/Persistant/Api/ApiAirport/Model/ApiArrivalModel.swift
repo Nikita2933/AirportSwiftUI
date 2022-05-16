@@ -1,5 +1,5 @@
 //
-//  ApiArrival.swift
+//  ApiArrivalModel.swift
 //  
 //
 //  Created by Никита Иванов on 01.05.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ApiArrival: Codable {
+public struct ApiArrivalModel: Codable {
     let embedded: Arrival
 
     enum CodingKeys: String, CodingKey {

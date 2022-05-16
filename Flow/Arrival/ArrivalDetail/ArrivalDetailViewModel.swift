@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import Persistant
 
 final class ArrivalDetailViewModel: ObservableObject {
-    let model: ArrivalCellModel
+    let model: ArrivalModel
 
-    init(model: ArrivalCellModel) {
+    init(model: ArrivalModel) {
         self.model = model
     }
 }

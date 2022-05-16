@@ -7,11 +7,13 @@
 
 import Foundation
 
-public enum ApiAirportConfiguration {
+final class ApiAirportConfiguration {
+
+    public static let shared = ApiAirportConfiguration()
 
     private static let host = "arh.aero"
 
-    var url: URL {
+    private var url: URL {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = ApiAirportConfiguration.host
@@ -19,4 +21,11 @@ public enum ApiAirportConfiguration {
         return urlComponents.url!
     }
 
+    var apiPath: URL {
+        url.appendingPathComponent("api")
+    }
+
+    var flightPath: URL {
+        apiPath.appendingPathComponent("flights/online")
+    }
 }
