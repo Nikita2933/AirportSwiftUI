@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Domain
 
 public protocol ApiArrival: AnyObject {
     func getListArrival(args: GetListArrivalArgs) async throws -> Data

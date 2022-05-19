@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Persistant
+import Domain
 import SwiftUI
 import Resolver
 

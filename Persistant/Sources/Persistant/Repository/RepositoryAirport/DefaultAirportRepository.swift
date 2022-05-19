@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import Domain
 import Foundation
 import RealmSwift
 import SwiftSoup
@@ -27,7 +28,7 @@ public final class DefaultAirportRepository: ArrivalRepository {
 
             arrivalDatabase.addToRealmArrival(model: apiArrivalModel)
 
-            let newModel = await arrivalDatabase.getRealmEntity(entity: RealmArrival()) as RealmArrival?
+            let newModel = arrivalDatabase.getRealmEntity(entity: RealmArrival()) as RealmArrival?
             return newModel!.data.map { $0.toArrivalModel() }
         } catch let error {
             print(error.localizedDescription)

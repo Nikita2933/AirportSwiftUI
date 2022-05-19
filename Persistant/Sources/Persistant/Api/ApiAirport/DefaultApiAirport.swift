@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Domain
 import Alamofire
 
 public final class DefaultApiAirport: ApiArrival {

@@ -7,6 +7,7 @@
 
 import Persistant
 import Resolver
+import Domain
 
 extension Resolver {
     public static func registerRepository() {

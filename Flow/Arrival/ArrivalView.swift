@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Persistant
+import Domain
 
 struct ArrivalView: View {
     @StateObject var viewModel: ArrivalViewModel

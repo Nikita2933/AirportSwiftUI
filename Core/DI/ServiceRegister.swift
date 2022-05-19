@@ -6,6 +6,7 @@
 //
 
 import Persistant
+import RealmSwift
 import Resolver
 
 extension Resolver {

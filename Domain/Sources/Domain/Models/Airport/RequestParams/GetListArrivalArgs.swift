@@ -8,7 +8,7 @@
 import Foundation
 
 public struct GetListArrivalArgs {
-    let times: DayTime
+    public let times: DayTime
 
     public init(times: DayTime) {
         self.times = times

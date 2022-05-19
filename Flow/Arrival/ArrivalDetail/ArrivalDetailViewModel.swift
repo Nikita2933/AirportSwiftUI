@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Persistant
+import Domain
 
 final class ArrivalDetailViewModel: ObservableObject {
     let model: ArrivalModel

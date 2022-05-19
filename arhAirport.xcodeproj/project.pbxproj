@@ -44,6 +44,7 @@
 		A8A26BFC281FB8A400B5365B /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = A8A26BFB281FB8A400B5365B /* Resolver */; };
 		A8AC6CD827F8485C00CD0AFC /* ArrivalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC6CD727F8485C00CD0AFC /* ArrivalDetailView.swift */; };
 		A8AC6CDA27F8486500CD0AFC /* ArrivalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC6CD927F8486500CD0AFC /* ArrivalDetailViewModel.swift */; };
+		A8EA13372836B1AA000336BE /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = A8EA13362836B1AA000336BE /* Domain */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8067011281FC86600407498 /* Alamofire in Frameworks */,
+				A8EA13372836B1AA000336BE /* Domain in Frameworks */,
 				A8A26BF9281FB82700B5365B /* RealmSwift in Frameworks */,
 				A8A26BF7281FB82700B5365B /* Realm in Frameworks */,
 				A8A26BFC281FB8A400B5365B /* Resolver in Frameworks */,
@@ -167,6 +169,7 @@
 		A854686E281C05BA00B73191 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A8EE45E82836B830007E5370 /* CoreData */,
 				A854686F281C05CA00B73191 /* DI */,
 			);
 			path = Core;
@@ -290,6 +293,13 @@
 			path = ArrivalDetail;
 			sourceTree = "<group>";
 		};
+		A8EE45E82836B830007E5370 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,6 +324,7 @@
 				A8A26BFB281FB8A400B5365B /* Resolver */,
 				A8067010281FC86600407498 /* Alamofire */,
 				A872AF462832DA12007B4958 /* SwiftSoup */,
+				A8EA13362836B1AA000336BE /* Domain */,
 			);
 			productName = "arhAirport (iOS)";
 			productReference = A86C65D127D5EFFB00FE38A6 /* arhAirport.app */;
@@ -702,6 +713,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A8A26BFA281FB8A400B5365B /* XCRemoteSwiftPackageReference "Resolver" */;
 			productName = Resolver;
+		};
+		A8EA13362836B1AA000336BE /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
