@@ -8,6 +8,9 @@
       location = "group:Domain">
    </FileRef>
    <FileRef
+      location = "group:CoreAirport">
+   </FileRef>
+   <FileRef
       location = "group:arhAirport.xcodeproj">
    </FileRef>
 </Workspace>

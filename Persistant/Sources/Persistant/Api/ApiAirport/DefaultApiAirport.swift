@@ -71,7 +71,6 @@ public final class DefaultApiAirport: ApiArrival, ApiDeparture {
                 }
                 if let error = response.error {
                     continuation.resume(throwing: error)
-                    print(error.localizedDescription)
                     return
                 }
             }

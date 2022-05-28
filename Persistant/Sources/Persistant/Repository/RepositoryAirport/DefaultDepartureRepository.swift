@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import CoreAirport
 import Domain
 import Foundation
 import RealmSwift
@@ -26,7 +27,9 @@ public final class DefaultDepartureRepository: DepartureRepository {
         do {
             data = try await apiDeparture.getListDeparture(args: args)
         } catch let error {
-            print("handle error \(error)")
+
+            await MessageObserver.shared.handleError(error)
+
             let oldModel = departureDatabase.getRealmEntity(entity: RealmDeparture()) as RealmDeparture?
             return oldModel!.data.map { $0.toDepartureModel() }
         }

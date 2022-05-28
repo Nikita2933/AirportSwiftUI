@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import CoreAirport
 
 @main
 struct arhAirportApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MessageHandler {
+                ContentView()
+            }
         }
     }
 }

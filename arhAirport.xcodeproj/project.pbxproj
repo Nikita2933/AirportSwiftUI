@@ -20,6 +20,8 @@
 		A808B4FD280AC9C8006E7C44 /* DepartureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A808B4FC280AC9C8006E7C44 /* DepartureDetailView.swift */; };
 		A808B4FF280AC9D2006E7C44 /* DepartureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A808B4FE280AC9D2006E7C44 /* DepartureDetailViewModel.swift */; };
 		A808B503280ACCD7006E7C44 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A808B502280ACCD7006E7C44 /* Localizable.strings */; };
+		A84B9DF028424BEE005F6013 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = A84B9DEF28424BEE005F6013 /* AlertToast */; };
+		A84B9DFD284254E9005F6013 /* CoreAirport in Frameworks */ = {isa = PBXBuildFile; productRef = A84B9DFC284254E9005F6013 /* CoreAirport */; };
 		A84D0C51281BDBF6002A424B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A84D0C50281BDBF6002A424B /* .gitignore */; };
 		A8546871281C068300B73191 /* ResolverRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546870281C068300B73191 /* ResolverRegister.swift */; };
 		A8546873281C06CF00B73191 /* AirportApiModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546872281C06CF00B73191 /* AirportApiModule.swift */; };
@@ -36,7 +38,6 @@
 		A86C65FD27D5F44E00FE38A6 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C65FC27D5F44E00FE38A6 /* ContactViewModel.swift */; };
 		A86C660127D63D2D00FE38A6 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C660027D63D2D00FE38A6 /* RootTabView.swift */; };
 		A872AF40282FA71E007B4958 /* ServiceRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872AF3F282FA71E007B4958 /* ServiceRegister.swift */; };
-		A872AF472832DA12007B4958 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A872AF462832DA12007B4958 /* SwiftSoup */; };
 		A8A26BF2281EADA200B5365B /* Persistant in Frameworks */ = {isa = PBXBuildFile; productRef = A8A26BF1281EADA200B5365B /* Persistant */; };
 		A8A26BF7281FB82700B5365B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A8A26BF6281FB82700B5365B /* Realm */; };
 		A8A26BF9281FB82700B5365B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A8A26BF8281FB82700B5365B /* RealmSwift */; };
@@ -91,8 +92,9 @@
 				A8A26BF9281FB82700B5365B /* RealmSwift in Frameworks */,
 				A8A26BF7281FB82700B5365B /* Realm in Frameworks */,
 				A8A26BFC281FB8A400B5365B /* Resolver in Frameworks */,
+				A84B9DF028424BEE005F6013 /* AlertToast in Frameworks */,
 				A8A26BF2281EADA200B5365B /* Persistant in Frameworks */,
-				A872AF472832DA12007B4958 /* SwiftSoup in Frameworks */,
+				A84B9DFD284254E9005F6013 /* CoreAirport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,8 +298,9 @@
 				A8A26BF8281FB82700B5365B /* RealmSwift */,
 				A8A26BFB281FB8A400B5365B /* Resolver */,
 				A8067010281FC86600407498 /* Alamofire */,
-				A872AF462832DA12007B4958 /* SwiftSoup */,
 				A8EA13362836B1AA000336BE /* Domain */,
+				A84B9DEF28424BEE005F6013 /* AlertToast */,
+				A84B9DFC284254E9005F6013 /* CoreAirport */,
 			);
 			productName = "arhAirport (iOS)";
 			productReference = A86C65D127D5EFFB00FE38A6 /* arhAirport.app */;
@@ -331,7 +334,7 @@
 				A8A26BF5281FB82700B5365B /* XCRemoteSwiftPackageReference "realm-swift" */,
 				A8A26BFA281FB8A400B5365B /* XCRemoteSwiftPackageReference "Resolver" */,
 				A806700F281FC86600407498 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				A872AF452832DA12007B4958 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				A84B9DEE28424BEE005F6013 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = A86C65D227D5EFFB00FE38A6 /* Products */;
 			projectDirPath = "";
@@ -630,12 +633,12 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		A872AF452832DA12007B4958 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+		A84B9DEE28424BEE005F6013 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			repositoryURL = "https://github.com/elai950/AlertToast";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 1.0.0;
 			};
 		};
 		A8A26BF5281FB82700B5365B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
@@ -662,10 +665,14 @@
 			package = A806700F281FC86600407498 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		A872AF462832DA12007B4958 /* SwiftSoup */ = {
+		A84B9DEF28424BEE005F6013 /* AlertToast */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A872AF452832DA12007B4958 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
-			productName = SwiftSoup;
+			package = A84B9DEE28424BEE005F6013 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+		A84B9DFC284254E9005F6013 /* CoreAirport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreAirport;
 		};
 		A8A26BF1281EADA200B5365B /* Persistant */ = {
 			isa = XCSwiftPackageProductDependency;
