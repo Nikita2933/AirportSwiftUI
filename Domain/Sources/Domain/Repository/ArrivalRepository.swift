@@ -6,5 +6,5 @@
 //
 
 public protocol ArrivalRepository {
-    @MainActor func getListArrival(args: GetListArrivalArgs) async -> [ArrivalModel]
+    @MainActor func getListArrival(args: GetAirportListArgs) async throws -> [ArrivalModel]
 }

@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import Domain
 
 final class DepartureDetailViewModel: ObservableObject {
-    let model: DepartureCellModel
+    let model: DepartureModel
 
-    init(model: DepartureCellModel) {
+    init(model: DepartureModel) {
         self.model = model
     }
 }

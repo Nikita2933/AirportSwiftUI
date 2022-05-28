@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ApiDeparture: Codable {
+public struct ApiDepartureModel: Codable {
     let embedded: Departure
 
     enum CodingKeys: String, CodingKey {
@@ -16,7 +16,7 @@ struct ApiDeparture: Codable {
 }
 
 // MARK: - Embedded
-struct Departure: Codable {
+public struct Departure: Codable {
     let items: [DepartureItem]
 
     enum CodingKeys: String, CodingKey {
@@ -25,7 +25,7 @@ struct Departure: Codable {
 }
 
 // MARK: - Item
-struct DepartureItem: Codable {
+public struct DepartureItem: Codable {
     let id: String
     let airportDeparture: String
     let airportArrival: String
@@ -65,7 +65,7 @@ struct DepartureItem: Codable {
 }
 
 // MARK: - Links
-struct DepartureLinks: Codable {
+public struct DepartureLinks: Codable {
     let departureSelfClass: DepartureSelfClass
 
     enum CodingKeys: String, CodingKey {
@@ -74,7 +74,7 @@ struct DepartureLinks: Codable {
 }
 
 // MARK: - SelfClass
-struct DepartureSelfClass: Codable {
+public struct DepartureSelfClass: Codable {
     let href: String
 
     enum CodingKeys: String, CodingKey {

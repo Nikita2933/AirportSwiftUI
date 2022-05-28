@@ -8,13 +8,20 @@
 import Persistant
 import Resolver
 import Domain
+import Darwin
 
 extension Resolver {
     public static func registerRepository() {
         register(ArrivalRepository.self) {
-            DefaultAirportRepository(
+            DefaultArrivalRepository(
                 arrivalDatabase: resolve(),
                 apiArrival: resolve()
+            )
+        }
+        register(DepartureRepository.self) {
+            DefaultDepartureRepository(
+                departureDatabase: resolve(),
+                apiDeparture: resolve()
             )
         }
     }

@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Persistant
+import Domain
 
 struct DepartureView: View {
-    @StateObject var viewModel = DepartureViewModel()
+    @StateObject var viewModel: DepartureViewModel
     @State var isOpenDetail: Bool = false
-    @State var selectedDetailModel: DepartureCellModel?
+    @State var selectedDetailModel: DepartureModel?
 
     var body: some View {
         VStack {
@@ -38,7 +40,7 @@ struct DepartureView: View {
 }
 
 struct DepartureCell: View {
-    let model: DepartureCellModel
+    let model: DepartureModel
 
     var body: some View {
         HStack {
@@ -57,17 +59,16 @@ struct DepartureCell: View {
 
 struct DeparturePageView: View {
     @State var tabSelection: PageTabView
-    let tomorrow = DepartureView()
-    let today = DepartureView()
-    let yesterday = DepartureView()
-
+    let tomorrow = DepartureView(viewModel: DepartureViewModel(time: .tomorrow))
+    let today = DepartureView(viewModel: DepartureViewModel(time: .today))
+    let yesterday = DepartureView(viewModel: DepartureViewModel(time: .yesterday))
     @State var offset: CGFloat = 0
 
     var body: some View {
         NavigationView {
-            VStack {
+        VStack {
                 TabView(selection: $tabSelection) {
-                    tomorrow
+                    yesterday
                         .tag(PageTabView.tomorrow)
                     today
                         .tag(PageTabView.today)
@@ -84,7 +85,7 @@ struct DeparturePageView: View {
                                 return Color.clear
                             }
                         }
-                    yesterday
+                    tomorrow
                         .tag(PageTabView.yesterday)
                 }
                 .padding(.top, 40)
@@ -93,13 +94,13 @@ struct DeparturePageView: View {
                     VStack(spacing: 4) {
                         HStack {
                             ForEach(0...2, id: \.self) { index in
-                                Button {
-                                    withAnimation {
-                                        tabSelection = .init(rawValue: index)!
+                                    Button {
+                                        withAnimation {
+                                            tabSelection = .init(rawValue: index)!
+                                        }
+                                    } label: {
+                                        Text (Constants.pageDay[index])
                                     }
-                                } label: {
-                                    Text (Constants.pageDay[index])
-                                }
                                 if index != 2 {
                                     Spacer()
                                 }
@@ -121,23 +122,16 @@ struct DeparturePageView: View {
                         ToolbarMenu()
                     }
                 }
-                .navigationTitle(LocalizableStrings.Departure.title)
+                .navigationTitle(LocalizableStrings.Arrival.title)
             }
         }
     }
 
     func getDayOffset() -> CGFloat {
-        print(  -(UIScreen.main.bounds.width / 3))
         return (UIScreen.main.bounds.width / 3)
     }
 
     func getLineOffset() -> CGFloat {
         ((UIScreen.main.bounds.width / 5) + 70) * (CGFloat(offset) / UIScreen.main.bounds.width)
-    }
-}
-
-struct Departure_Previews: PreviewProvider {
-    static var previews: some View {
-        DeparturePageView(tabSelection: .today)
     }
 }

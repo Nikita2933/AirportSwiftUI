@@ -23,7 +23,12 @@ final class ArrivalViewModel: ObservableObject {
     }
 
     func getData(time: DayTime) async -> [ArrivalModel] {
-        await arrivalRepository.getListArrival(args: .init(times: time))
+        do {
+            return try await arrivalRepository.getListArrival(args: .init(times: time))
+        } catch let error {
+            print("handle error \(error)")
+            return []
+        }
     }
 
 }

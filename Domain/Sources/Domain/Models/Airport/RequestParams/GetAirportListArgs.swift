@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct GetListArrivalArgs {
+public struct GetAirportListArgs {
     public let times: DayTime
 
     public init(times: DayTime) {

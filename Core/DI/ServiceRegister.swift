@@ -17,6 +17,12 @@ extension Resolver {
         register(ApiArrival.self) {
             DefaultApiAirport()
         }
+        register(DepartureDatabase.self) {
+            RealmAirportDatabase()
+        }
+        register(ApiDeparture.self) {
+            DefaultApiAirport()
+        }
     }
 }
 
