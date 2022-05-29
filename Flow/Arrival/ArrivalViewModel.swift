@@ -9,25 +9,31 @@ import Foundation
 import Domain
 import SwiftUI
 import Resolver
+import CoreAirport
 
 final class ArrivalViewModel: ObservableObject {
 
-    @Injected private var arrivalRepository: ArrivalRepository
+    private var arrivalRepository: ArrivalRepository
     @Published public var exampleList: [ArrivalModel] = []
+    @Published public var loading: Bool = false
+    let time: DayTime
 
+    init(time: DayTime, arrivalRepository: ArrivalRepository) {
+        self.time = time
+        self.arrivalRepository = arrivalRepository
 
-    init(time: DayTime) {
-        Task.init {
-            exampleList = await getData(time: time)
+        Task {
+            await getData()
         }
     }
 
-    func getData(time: DayTime) async -> [ArrivalModel] {
+    @MainActor func getData() async {
         do {
-            return try await arrivalRepository.getListArrival(args: .init(times: time))
+            loading = true
+            exampleList = try await arrivalRepository.getListArrival(args: .init(times: time))
+            loading = false
         } catch let error {
-            print("handle error \(error)")
-            return []
+            await MessageObserver.shared.handleError(error)
         }
     }
 

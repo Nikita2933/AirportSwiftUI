@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import CoreAirport
 import Domain
 import Foundation
 import RealmSwift
@@ -22,16 +23,16 @@ public final class DefaultArrivalRepository: ArrivalRepository {
     }
 
     @MainActor public func getListArrival(args: GetAirportListArgs) async throws -> [ArrivalModel] {
-        let data: Data
+        let apiArrivalModel: ApiArrivalModel
         do {
-            data = try await apiArrival.getListArrival(args: args)
+            apiArrivalModel = try await apiArrival.getListArrival(args: args)
         } catch let error {
-            print("handle error \(error)")
+            Task {
+                await MessageObserver.shared.handleError(error)
+            }
             let oldModel = arrivalDatabase.getRealmEntity(entity: RealmArrival()) as RealmArrival?
             return oldModel!.data.map { $0.toArrivalModel() }
         }
-
-        let apiArrivalModel = try JSONDecoder().decode(ApiArrivalModel.self, from: data)
 
         arrivalDatabase.addToRealmArrival(model: apiArrivalModel)
 

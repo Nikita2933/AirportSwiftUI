@@ -10,7 +10,6 @@ import CoreAirport
 import Domain
 import Foundation
 import RealmSwift
-import SwiftSoup
 
 public final class DefaultDepartureRepository: DepartureRepository {
 
@@ -23,17 +22,16 @@ public final class DefaultDepartureRepository: DepartureRepository {
     }
 
     @MainActor public func getListDeparture(args: GetAirportListArgs) async throws -> [DepartureModel] {
-        let data: Data
+        let apiDepartureModel: ApiDepartureModel
         do {
-            data = try await apiDeparture.getListDeparture(args: args)
+            apiDepartureModel = try await apiDeparture.getListDeparture(args: args)
         } catch let error {
-
-            await MessageObserver.shared.handleError(error)
-
+            Task {
+                await MessageObserver.shared.handleError(error)
+            }
             let oldModel = departureDatabase.getRealmEntity(entity: RealmDeparture()) as RealmDeparture?
             return oldModel!.data.map { $0.toDepartureModel() }
         }
-        let apiDepartureModel = try JSONDecoder().decode(ApiDepartureModel.self, from: data)
 
         departureDatabase.addToRealmDeparture(model: apiDepartureModel)
 

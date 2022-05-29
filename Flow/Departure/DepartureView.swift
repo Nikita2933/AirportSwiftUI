@@ -7,61 +7,14 @@
 
 import SwiftUI
 import Persistant
+import Resolver
 import Domain
-
-struct DepartureView: View {
-    @StateObject var viewModel: DepartureViewModel
-    @State var isOpenDetail: Bool = false
-    @State var selectedDetailModel: DepartureModel?
-
-    var body: some View {
-        VStack {
-            NavigationLink(isActive: $isOpenDetail) {
-                if let selectedDetailModel = selectedDetailModel {
-                    DepartureDetailView(viewModel: DepartureDetailViewModel(model: selectedDetailModel))
-                }
-            } label: {
-                EmptyView()
-            }
-            List {
-                ForEach(viewModel.exampleList, id: \.self) { element in
-                    Button {
-                        selectedDetailModel = element
-                        isOpenDetail.toggle()
-                    } label: {
-                        DepartureCell(model: element)
-                    }
-                }
-            }
-            .listStyle(.plain)
-        }
-        .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
-struct DepartureCell: View {
-    let model: DepartureModel
-
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text("\(model.departureTime) \(model.flyDirection)")
-                Text(model.reisName)
-            }
-            Spacer()
-            VStack(alignment: .trailing) {
-                Text(model.aviaCompany)
-                (model.statusLabel != nil) ? Text(model.statusLabel ?? "") : nil
-            }
-        }
-    }
-}
 
 struct DeparturePageView: View {
     @State var tabSelection: PageTabView
-    let tomorrow = DepartureView(viewModel: DepartureViewModel(time: .tomorrow))
-    let today = DepartureView(viewModel: DepartureViewModel(time: .today))
-    let yesterday = DepartureView(viewModel: DepartureViewModel(time: .yesterday))
+    let tomorrow = DepartureView(viewModel: Resolver.resolve(DepartureViewModel.self, args: DayTime.tomorrow))
+    let today = DepartureView(viewModel: Resolver.resolve(DepartureViewModel.self, args: DayTime.today))
+    let yesterday = DepartureView(viewModel: Resolver.resolve(DepartureViewModel.self, args: DayTime.yesterday))
     @State var offset: CGFloat = 0
 
     var body: some View {
@@ -126,6 +79,58 @@ struct DeparturePageView: View {
             }
         }
     }
+
+    
+struct DepartureView: View {
+    @StateObject var viewModel: DepartureViewModel
+    @State var isOpenDetail: Bool = false
+    @State var selectedDetailModel: DepartureModel?
+
+    var body: some View {
+        VStack {
+            NavigationLink(isActive: $isOpenDetail) {
+                if let selectedDetailModel = selectedDetailModel {
+                    DepartureDetailView(viewModel: DepartureDetailViewModel(model: selectedDetailModel))
+                }
+            } label: {
+                EmptyView()
+            }
+            List {
+                ForEach(viewModel.exampleList, id: \.self) { element in
+                    Button {
+                        selectedDetailModel = element
+                        isOpenDetail.toggle()
+                    } label: {
+                        DepartureCell(model: element)
+                    }
+                }
+            }
+            .refreshable {
+                await viewModel.getData()
+            }
+            .listStyle(.plain)
+        }
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+struct DepartureCell: View {
+    let model: DepartureModel
+
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text("\(model.departureTime) \(model.flyDirection)")
+                Text(model.reisName)
+            }
+            Spacer()
+            VStack(alignment: .trailing) {
+                Text(model.aviaCompany)
+                (model.statusLabel != nil) ? Text(model.statusLabel ?? "") : nil
+            }
+        }
+    }
+}
 
     func getDayOffset() -> CGFloat {
         return (UIScreen.main.bounds.width / 3)

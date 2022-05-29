@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct WeatherView: View {
-    @StateObject var viewModel: WeatherViewModel = WeatherViewModel()
+    @StateObject var viewModel: WeatherViewModel = Resolver.resolve()
     
     var body: some View {
         NavigationView {
             VStack {
                 weatherTop()
-                weatherList(dataModel: viewModel.exampleWeather)
+                //weatherList(dataModel: viewModel.exampleWeather)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

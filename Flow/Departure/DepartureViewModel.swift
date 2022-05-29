@@ -9,28 +9,32 @@ import Foundation
 import Domain
 import SwiftUI
 import Resolver
+import CoreAirport
 
 final class DepartureViewModel: ObservableObject {
 
-    @Injected private var departureRepository: DepartureRepository
+    private var departureRepository: DepartureRepository
     @Published public var exampleList: [DepartureModel] = []
+    @Published public var loading: Bool = false
+    let time: DayTime
 
-
-    init(time: DayTime) {
-        Task.init {
-            exampleList = await getData(time: time)
+    init(time: DayTime, departureRepository: DepartureRepository) {
+        self.time = time
+        self.departureRepository = departureRepository
+        Task {
+            await getData()
         }
     }
 
-    func getData(time: DayTime) async -> [DepartureModel] {
+    @MainActor func getData() async {
         do {
-            return try await departureRepository.getListDeparture(args: .init(times: time))
+            loading = true
+            exampleList = try await departureRepository.getListDeparture(args: .init(times: time))
+            loading = false
         } catch let error {
-            print("handle error \(error)")
-            return []
+            await MessageObserver.shared.handleError(error)
         }
     }
-
 }
 
 

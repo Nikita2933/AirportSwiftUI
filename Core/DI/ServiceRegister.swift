@@ -12,17 +12,22 @@ import Resolver
 extension Resolver {
     public static func registerService() {
         register(ArrivalDatabase.self) {
-            RealmAirportDatabase()
+            DefaultRealmDatabase()
         }
         register(ApiArrival.self) {
             DefaultApiAirport()
         }
         register(DepartureDatabase.self) {
-            RealmAirportDatabase()
+            DefaultRealmDatabase()
         }
         register(ApiDeparture.self) {
             DefaultApiAirport()
         }
+        register(WeatherDatabase.self) {
+            DefaultRealmDatabase()
+        }
+        register(ApiWeather.self) {
+            DefaultApiWeather()
+        }
     }
 }
-

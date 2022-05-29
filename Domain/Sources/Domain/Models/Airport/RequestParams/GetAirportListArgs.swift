@@ -26,9 +26,9 @@ public enum DayTime {
         case .today:
             break
         case .tomorrow:
-            time -= 86400
-        case .yesterday:
             time += 86400
+        case .yesterday:
+            time -= 86400
         }
         return dateformatter.string(from: time)
     }

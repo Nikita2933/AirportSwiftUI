@@ -8,7 +8,6 @@
 import Persistant
 import Resolver
 import Domain
-import Darwin
 
 extension Resolver {
     public static func registerRepository() {
@@ -22,6 +21,12 @@ extension Resolver {
             DefaultDepartureRepository(
                 departureDatabase: resolve(),
                 apiDeparture: resolve()
+            )
+        }
+        register(WeatherRepository.self) {
+            DefaultWeatherRepository(
+                weatherDatabase: resolve(),
+                apiWeather: resolve()
             )
         }
     }

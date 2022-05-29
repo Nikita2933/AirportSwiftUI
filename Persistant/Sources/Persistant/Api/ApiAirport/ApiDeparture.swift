@@ -9,5 +9,5 @@ import Foundation
 import Domain
 
 public protocol ApiDeparture: AnyObject {
-    func getListDeparture(args: GetAirportListArgs) async throws -> Data
+    func getListDeparture(args: GetAirportListArgs) async throws -> ApiDepartureModel
 }

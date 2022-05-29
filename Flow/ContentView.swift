@@ -33,8 +33,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $tabState) {
-            ArrivalPageView(tabSelection: .today)
-
+            ArrivalPageView()
                 .tabItem({
                     Text(LocalizableStrings.Arrival.title)
                     Image(uiImage: Resources.Images.airplaneLanding.image)

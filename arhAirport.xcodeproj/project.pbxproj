@@ -20,12 +20,12 @@
 		A808B4FD280AC9C8006E7C44 /* DepartureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A808B4FC280AC9C8006E7C44 /* DepartureDetailView.swift */; };
 		A808B4FF280AC9D2006E7C44 /* DepartureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A808B4FE280AC9D2006E7C44 /* DepartureDetailViewModel.swift */; };
 		A808B503280ACCD7006E7C44 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A808B502280ACCD7006E7C44 /* Localizable.strings */; };
+		A83D67B32843AFD300B39D45 /* ViewModelRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D67B22843AFD300B39D45 /* ViewModelRegister.swift */; };
 		A84B9DF028424BEE005F6013 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = A84B9DEF28424BEE005F6013 /* AlertToast */; };
 		A84B9DFD284254E9005F6013 /* CoreAirport in Frameworks */ = {isa = PBXBuildFile; productRef = A84B9DFC284254E9005F6013 /* CoreAirport */; };
 		A84D0C51281BDBF6002A424B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A84D0C50281BDBF6002A424B /* .gitignore */; };
 		A8546871281C068300B73191 /* ResolverRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546870281C068300B73191 /* ResolverRegister.swift */; };
-		A8546873281C06CF00B73191 /* AirportApiModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546872281C06CF00B73191 /* AirportApiModule.swift */; };
-		A8546875281C06F100B73191 /* WeatherApiModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546874281C06F100B73191 /* WeatherApiModule.swift */; };
+		A8546873281C06CF00B73191 /* RepositoryRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8546872281C06CF00B73191 /* RepositoryRegister.swift */; };
 		A86C65DA27D5EFFB00FE38A6 /* arhAirportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C65CA27D5EFF900FE38A6 /* arhAirportApp.swift */; };
 		A86C65DC27D5EFFB00FE38A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C65CB27D5EFF900FE38A6 /* ContentView.swift */; };
 		A86C65EE27D5F1F700FE38A6 /* DepartureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C65ED27D5F1F700FE38A6 /* DepartureView.swift */; };
@@ -60,10 +60,10 @@
 		A808B4FC280AC9C8006E7C44 /* DepartureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureDetailView.swift; sourceTree = "<group>"; };
 		A808B4FE280AC9D2006E7C44 /* DepartureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureDetailViewModel.swift; sourceTree = "<group>"; };
 		A808B502280ACCD7006E7C44 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A83D67B22843AFD300B39D45 /* ViewModelRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelRegister.swift; sourceTree = "<group>"; };
 		A84D0C50281BDBF6002A424B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A8546870281C068300B73191 /* ResolverRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolverRegister.swift; sourceTree = "<group>"; };
-		A8546872281C06CF00B73191 /* AirportApiModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportApiModule.swift; sourceTree = "<group>"; };
-		A8546874281C06F100B73191 /* WeatherApiModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiModule.swift; sourceTree = "<group>"; };
+		A8546872281C06CF00B73191 /* RepositoryRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRegister.swift; sourceTree = "<group>"; };
 		A86C65CA27D5EFF900FE38A6 /* arhAirportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arhAirportApp.swift; sourceTree = "<group>"; };
 		A86C65CB27D5EFF900FE38A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A86C65D127D5EFFB00FE38A6 /* arhAirport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arhAirport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,9 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				A8546870281C068300B73191 /* ResolverRegister.swift */,
-				A8546872281C06CF00B73191 /* AirportApiModule.swift */,
+				A8546872281C06CF00B73191 /* RepositoryRegister.swift */,
 				A872AF3F282FA71E007B4958 /* ServiceRegister.swift */,
-				A8546874281C06F100B73191 /* WeatherApiModule.swift */,
+				A83D67B22843AFD300B39D45 /* ViewModelRegister.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -401,14 +401,14 @@
 				A86C65EE27D5F1F700FE38A6 /* DepartureView.swift in Sources */,
 				A86C65DA27D5EFFB00FE38A6 /* arhAirportApp.swift in Sources */,
 				A808B4FF280AC9D2006E7C44 /* DepartureDetailViewModel.swift in Sources */,
-				A8546873281C06CF00B73191 /* AirportApiModule.swift in Sources */,
+				A8546873281C06CF00B73191 /* RepositoryRegister.swift in Sources */,
 				A86C65FB27D5F44600FE38A6 /* ContactView.swift in Sources */,
-				A8546875281C06F100B73191 /* WeatherApiModule.swift in Sources */,
 				A872AF40282FA71E007B4958 /* ServiceRegister.swift in Sources */,
 				A86C65F327D5F38100FE38A6 /* ArrivalView.swift in Sources */,
 				A80623EF280AFD510092F852 /* ContactModel.swift in Sources */,
 				A86C65F927D5F3AD00FE38A6 /* WeatherViewModel.swift in Sources */,
 				A86C65FD27D5F44E00FE38A6 /* ContactViewModel.swift in Sources */,
+				A83D67B32843AFD300B39D45 /* ViewModelRegister.swift in Sources */,
 				A80623E5280AE09A0092F852 /* Resources.swift in Sources */,
 				A8AC6CD827F8485C00CD0AFC /* ArrivalDetailView.swift in Sources */,
 				A8AC6CDA27F8486500CD0AFC /* ArrivalDetailViewModel.swift in Sources */,

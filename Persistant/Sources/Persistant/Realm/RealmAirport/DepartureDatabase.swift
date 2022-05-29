@@ -11,4 +11,3 @@ public protocol DepartureDatabase: AnyObject {
     func getRealmEntity<T: Object>(entity: T) -> T?
     func addToRealmDeparture(model: ApiDepartureModel)
 }
-

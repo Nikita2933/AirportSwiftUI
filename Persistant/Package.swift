@@ -17,7 +17,6 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/realm/realm-swift.git", branch: "master"),
         .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.6.1")),
-        .package(url: "https://github.com/scinfu/SwiftSoup.git", branch: "master"),
         .package(path: "../Domain"),
         .package(path: "../CoreAirport"),
         // Dependencies declare other packages that this package depends on.
@@ -31,7 +30,6 @@ let package = Package(
             dependencies: [
                 .product(name: "Realm", package: "realm-swift"),
                 .product(name: "Alamofire", package: "Alamofire"),
-                .product(name: "SwiftSoup", package: "SwiftSoup"),
                 "Domain",
                 "CoreAirport"
             ]

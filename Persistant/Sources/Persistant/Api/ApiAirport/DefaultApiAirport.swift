@@ -12,7 +12,7 @@ import Alamofire
 public final class DefaultApiAirport: ApiArrival, ApiDeparture {
     public init() { }
     
-    public func getListArrival(args: GetAirportListArgs) async throws -> Data {
+    public func getListArrival(args: GetAirportListArgs) async throws -> ApiArrivalModel {
         try await withUnsafeThrowingContinuation { continuation in
             let parameterDictionary = [
                 "date" : args.times.time,
@@ -31,21 +31,23 @@ public final class DefaultApiAirport: ApiArrival, ApiDeparture {
                 interceptor: nil,
                 requestModifier: .none
             ).responseData { response in
-
                 if let data = response.data {
-                    continuation.resume(returning: data)
-                    return
+                    do {
+                        let apiArrivalModel = try JSONDecoder().decode(ApiArrivalModel.self, from: data)
+                        continuation.resume(returning: apiArrivalModel)
+                    } catch let error {
+                        continuation.resume(throwing: error)
+                    }
                 }
                 if let error = response.error {
                     continuation.resume(throwing: error)
-                    print(error.localizedDescription)
                     return
                 }
             }
         }
     }
 
-    public func getListDeparture(args: GetAirportListArgs) async throws -> Data {
+    public func getListDeparture(args: GetAirportListArgs) async throws -> ApiDepartureModel {
         try await withUnsafeThrowingContinuation { continuation in
             let parameterDictionary = [
                 "date" : args.times.time,
@@ -66,8 +68,12 @@ public final class DefaultApiAirport: ApiArrival, ApiDeparture {
             ).responseData { response in
 
                 if let data = response.data {
-                    continuation.resume(returning: data)
-                    return
+                    do {
+                        let apiDepartureModel = try JSONDecoder().decode(ApiDepartureModel.self, from: data)
+                        continuation.resume(returning: apiDepartureModel)
+                    } catch let error {
+                        continuation.resume(throwing: error)
+                    }
                 }
                 if let error = response.error {
                     continuation.resume(throwing: error)
