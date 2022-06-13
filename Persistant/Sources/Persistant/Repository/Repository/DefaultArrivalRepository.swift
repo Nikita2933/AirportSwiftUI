@@ -10,7 +10,6 @@ import CoreAirport
 import Domain
 import Foundation
 import RealmSwift
-import SwiftSoup
 
 public final class DefaultArrivalRepository: ArrivalRepository {
 

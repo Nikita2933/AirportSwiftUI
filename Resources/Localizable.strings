@@ -9,6 +9,9 @@
 "Arrival.Title" = "Прилёт";
 "Departure.Title" = "Вылет";
 "Weather.Title" = "Погода";
+"Weather.temp" = "%@ C\U00B0";
+"Weather.windSpeed" = "ветер %@ м/с";
+
 "Contact.Title" = "Контакты";
 
 "Today" = "Сегодня";

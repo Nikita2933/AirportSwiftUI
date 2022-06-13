@@ -19,10 +19,13 @@ struct ToolbarMenu: View {
             Button(action: {
 
             }, label: {
-                Text("Настройки")
+                Text("Что-то ещё")
             })
         } label: {
             Image(uiImage: Resources.Images.menuIcon.image)
+                .renderingMode(.template)
+                .foregroundColor(.white)
+                
         }
     }
 }

@@ -6,7 +6,8 @@ import PackageDescription
 let package = Package(
     name: "CoreAirport",
     platforms: [
-        .iOS(.v15)],
+        .iOS(.v15)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -14,7 +15,8 @@ let package = Package(
             targets: ["CoreAirport"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/elai950/AlertToast.git", branch: "master")
+        .package(url: "https://github.com/elai950/AlertToast.git", branch: "master"),
+        .package(url: "https://github.com/realm/realm-swift.git", branch: "master")
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
@@ -24,7 +26,8 @@ let package = Package(
         .target(
             name: "CoreAirport",
             dependencies: [
-                .product(name: "AlertToast", package: "AlertToast")
+                .product(name: "AlertToast", package: "AlertToast"),
+                .product(name: "Realm", package: "realm-swift")
             ])
     ]
 )

@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 public class RealmArrival: Object {
-     public let data = List<ArrivalDataList>()
+     @Persisted public var data = List<ArrivalDataList>()
 }
 
 public class ArrivalDataList: Object {

@@ -5,86 +5,93 @@
 //  Created by Никита Иванов on 07.03.2022.
 //
 
+import Domain
 import SwiftUI
 import Resolver
+import CoreAirport
 
 struct WeatherView: View {
     @StateObject var viewModel: WeatherViewModel = Resolver.resolve()
     
     var body: some View {
         NavigationView {
-            VStack {
-                weatherTop()
-                //weatherList(dataModel: viewModel.exampleWeather)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    ToolbarMenu()
+            if let model = viewModel.exampleWeather, let current = model.current, let hourly = model.hourly {
+                VStack {
+                    List {
+                        Section {
+                            ForEach(hourly, id: \.self) { item in
+                                weatherListCell(model: item)
+                                Divider()
+                            }
+                            .listRowSeparator(.hidden)
+                        } header: {
+                            weatherTop(model: current)
+                        }
+                    }
+                    .listStyle(.plain)
+                    .refreshable {
+                        await viewModel.loadWeather()
+                    }
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            ToolbarMenu()
+                        }
+                    }
+                    .navigationTitle(LocalizableStrings.Weather.title)
+                    .navigationBarTitleDisplayMode(.inline)
                 }
+            } else {
+                WeatherEmptyState()
+                    .listRowSeparator(.hidden)
             }
-            .navigationTitle(LocalizableStrings.Weather.title)
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
 struct weatherTop: View {
+    var model: CurrentData
     var body: some View {
-        VStack{
-            HStack {
-                Text("янв. 27. 11:47 AM")
-                Spacer()
-            }
-            HStack {
-                Text("-9")
-                    .font(.system(size: 40))
-                Spacer()
-                Image(uiImage: Resources.Images._01d.image)
-                    .resizable()
-                    .frame(width: 100, height: 100, alignment: .trailing)
-            }
-            HStack {
-                Text("Небольшой снегопад")
-                Spacer()
-            }
-            HStack {
-                Text("Ветер 2 м/с")
-                Spacer()
-            }
-            Divider()
-        }
-        .padding(.horizontal, 16)
-        .padding(.top, 16)
-    }
-}
-
-struct weatherList: View {
-    let dataModel: [WeatherCellModel]
-    var body: some View {
-        List {
-            ForEach(dataModel, id: \.self) { item in
-                weatherListCell(model: item)
+            VStack {
+                HStack {
+                    Text(model.dt.toWeatherDate())
+                    Spacer()
+                }
+                HStack {
+                    Text(LocalizableStrings.Weather.temp(model.temp))
+                        .font(.system(size: 40))
+                    Spacer()
+                    Image(uiImage: Resources.Images._01d.image)
+                        .resizable()
+                        .frame(width: 100, height: 100, alignment: .trailing)
+                }
+                HStack {
+                    Text(model.weather?.weatherDescription ?? "")
+                    Spacer()
+                }
+                HStack {
+                    Text(LocalizableStrings.Weather.windSpeed(model.windSpeed))
+                    Spacer()
+                }
                 Divider()
             }
+            .foregroundColor(.black)
             .listRowSeparator(.hidden)
-        }
-        .listStyle(.plain)
     }
 }
 
 struct weatherListCell: View {
-    let model: WeatherCellModel
+    let model: CurrentData
     var body: some View {
         VStack {
             HStack {
-                Text(model.time)
+                Text(model.dt.toWeatherHourMinute())
                 Spacer()
-                Image(uiImage: model.weatherIcon)
+                Image(model.weather!.icon)
                     .resizable()
                     .frame(width: 60, height: 60)
                 Spacer()
-                Text(model.temperature)
-                Text(model.windSpeed)
+                Text(LocalizableStrings.Weather.temp(model.temp))
+                Text(LocalizableStrings.Weather.windSpeed(model.windSpeed))
             }
         }
     }

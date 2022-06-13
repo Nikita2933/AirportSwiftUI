@@ -8,6 +8,7 @@
 import Foundation
 import Domain
 import Resolver
+import CoreAirport
 
 final class WeatherViewModel: ObservableObject {
 
@@ -15,9 +16,21 @@ final class WeatherViewModel: ObservableObject {
 
     init(weatherRepository: WeatherRepository) {
         self.weatherRepository = weatherRepository
+        
+        Task {
+            await loadWeather()
+        }
     }
 
     @Published public var loading: Bool = false
 
     @Published public var exampleWeather: RealmWeather?
+    
+    func loadWeather() async {
+        do {
+            exampleWeather = try await weatherRepository.getWeather()
+        } catch {
+            await MessageObserver.shared.handleError(error)
+        }
+    }
 }

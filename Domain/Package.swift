@@ -25,7 +25,7 @@ let package = Package(
         .target(
             name: "Domain",
             dependencies: [
-                .product(name: "Realm", package: "realm-swift")
+                .product(name: "Realm", package: "realm-swift"),
             ]
         )
     ]

@@ -18,9 +18,9 @@ public final class DefaultApiWeather: ApiWeather {
                 "lat" : "64.5958",
                 "lon" : "40.7170",
                 "exclude" : "minutely,daily",
-                "lang" : "ru",
                 "units" : "metric",
-                "appid" : "90c96242eded9183b38f63a2950df424"
+                "lang" : "ru",
+                "appid" : "28658d9919b0553cbab23474ff9b4d13"
             ]
 
             let header: HTTPHeaders = .init([.accept("text/html; charset=utf-8")])

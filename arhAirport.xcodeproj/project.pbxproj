@@ -323,11 +323,12 @@
 			};
 			buildConfigurationList = A86C65C827D5EFF800FE38A6 /* Build configuration list for PBXProject "arhAirport" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = A86C65C427D5EFF800FE38A6;
 			packageReferences = (

@@ -8,6 +8,7 @@
 import Foundation
 import RealmSwift
 import Domain
+import CoreAirport
 
 public final class DefaultRealmDatabase: ArrivalDatabase, DepartureDatabase, WeatherDatabase {
 
@@ -29,8 +30,10 @@ public final class DefaultRealmDatabase: ArrivalDatabase, DepartureDatabase, Wea
             if let oldModel = getRealmEntity(entity: RealmArrival()) {
                 realm.delete(oldModel)
             }
-            let arrivalInput = model.embedded.items
             let arrivalData = RealmArrival()
+            let arrivalInput = model.embedded.items
+         
+            let arrivalList = List<ArrivalDataList>()
             arrivalInput.forEach { item in
                 let newArrivalListDB = ArrivalDataList()
 
@@ -44,8 +47,9 @@ public final class DefaultRealmDatabase: ArrivalDatabase, DepartureDatabase, Wea
                 newArrivalListDB.arrivalTime = item.arrivalTime
                 newArrivalListDB.departureTime = item.departureTime
 
-                arrivalData.data.append(newArrivalListDB)
+                arrivalList.append(newArrivalListDB)
             }
+            arrivalData.data = arrivalList
             realm.add(arrivalData)
         })
     }
@@ -53,11 +57,14 @@ public final class DefaultRealmDatabase: ArrivalDatabase, DepartureDatabase, Wea
     public func addToRealmDeparture(model: ApiDepartureModel) {
         let realm = try! Realm()
         try! realm.write({
+            
             if let oldModel = getRealmEntity(entity: RealmDeparture()) {
                 realm.delete(oldModel)
             }
-            let departureInput = model.embedded.items
             let departureData = RealmDeparture()
+            let departureInput = model.embedded.items
+
+            let departureItem = List<DepartureDataList>()
             departureInput.forEach { item in
                 let newDepartureDB = DepartureDataList()
 
@@ -71,8 +78,10 @@ public final class DefaultRealmDatabase: ArrivalDatabase, DepartureDatabase, Wea
                 newDepartureDB.arrivalTime = item.arrivalTime
                 newDepartureDB.departureTime = item.departureTime
 
-                departureData.data.append(newDepartureDB)
+                departureItem.append(newDepartureDB)
             }
+            
+            departureData.data = departureItem
             realm.add(departureData)
         })
     }
@@ -80,10 +89,7 @@ public final class DefaultRealmDatabase: ArrivalDatabase, DepartureDatabase, Wea
     public func addToRealmWeather(model: ApiWeatherModel) {
         let realm = try! Realm()
         try! realm.write({
-             if let oldModel = getRealmEntity(entity: RealmWeather()) {
-                 realm.delete(oldModel)
-             }
-             let weatherDataModel = RealmWeather()
+             let weatherDataModel = getRealmEntity(entity: RealmWeather()) ?? RealmWeather()
              weatherDataModel.timezone = model.timezone
              weatherDataModel.timezoneOffset = model.timezoneOffset
 
@@ -107,10 +113,14 @@ public final class DefaultRealmDatabase: ArrivalDatabase, DepartureDatabase, Wea
              let snowData = SnowData()
              snowData.the1H.value = model.current.snow?.the1H
              weatherDataModel.current?.snow = snowData
-
+            
+            let hourlyData = List<CurrentData>()
+            
              model.hourly.forEach { hourly in
-                 weatherDataModel.hourly.append(currentAdd(currentModel: hourly))
+                 hourlyData.append(currentAdd(currentModel: hourly))
              }
+            
+            weatherDataModel.hourly = hourlyData
              realm.add(weatherDataModel)
          })
     }
@@ -121,17 +131,17 @@ public final class DefaultRealmDatabase: ArrivalDatabase, DepartureDatabase, Wea
         currentData.dt = currentModel.dt
         currentData.sunrise.value = currentModel.sunrise
         currentData.sunset.value = currentModel.sunset
-        currentData.temp = currentModel.temp
-        currentData.feelsLike = currentModel.feelsLike
-        currentData.pressure = currentModel.pressure
-        currentData.humidity = currentModel.humidity
-        currentData.dewPoint = currentModel.dewPoint
-        currentData.uvi.value = currentModel.uvi
-        currentData.clouds = currentModel.clouds
-        currentData.visibility = currentModel.visibility
-        currentData.windSpeed = currentModel.windSpeed
-        currentData.windGust.value = currentModel.windGust
-        currentData.windDeg = currentModel.windDeg
+        currentData.temp = currentModel.temp.toStringWeather()
+        currentData.feelsLike = currentModel.feelsLike.toStringWeather()
+        currentData.pressure = currentModel.pressure.toStringWeather()
+        currentData.humidity = currentModel.humidity.toStringWeather()
+        currentData.dewPoint = currentModel.dewPoint.toStringWeather()
+        currentData.uvi = currentModel.uvi?.toStringWeather()
+        currentData.clouds = currentModel.clouds.toStringWeather()
+        currentData.visibility = currentModel.visibility.toStringWeather()
+        currentData.windSpeed = currentModel.windSpeed.toStringWeather()
+        currentData.windGust = currentModel.windGust?.toStringWeather()
+        currentData.windDeg = currentModel.windDeg.toStringWeather()
         currentData.pop.value = currentModel.pop
 
         currentModel.weather.forEach { weather in

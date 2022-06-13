@@ -13,28 +13,28 @@ public class RealmWeather: Object {
     @Persisted public var timezone: String = ""
     @Persisted public var timezoneOffset: Int = 0
     @Persisted public var current: CurrentData?
-    public let hourly = List<CurrentData>()
+    @Persisted public var hourly = List<CurrentData>()
 }
 
 public class CurrentData: Object {
     @Persisted public var dt: Int = 0
-    @Persisted public var temp: Double = 0
-    @Persisted public var feelsLike: Double = 0
-    @Persisted public var pressure: Int = 0
-    @Persisted public var humidity: Int = 0
-    @Persisted public var dewPoint: Double = 0
-    @Persisted public var clouds: Int = 0
-    @Persisted public var visibility: Int = 0
-    @Persisted public var windSpeed: Double = 0
-    @Persisted public var windDeg: Int = 0
+    @Persisted public var temp: String = ""
+    @Persisted public var feelsLike: String = ""
+    @Persisted public var pressure: String = ""
+    @Persisted public var humidity: String = ""
+    @Persisted public var dewPoint: String = ""
+    @Persisted public var clouds: String = ""
+    @Persisted public var visibility: String = ""
+    @Persisted public var windSpeed: String = ""
+    @Persisted public var windDeg: String = ""
     @Persisted public var weather: WeatherData?
     @Persisted public var rain: RainData?
     @Persisted public var snow: SnowData?
     public let sunrise = RealmProperty<Int?>()
     public let sunset = RealmProperty<Int?>()
     public let pop = RealmProperty<Double?>()
-    public let windGust = RealmProperty<Double?>()
-    public let uvi = RealmProperty<Double?>()
+    @Persisted public var windGust: String?
+    @Persisted public var uvi: String?
 }
 
 public class WeatherData: Object {
