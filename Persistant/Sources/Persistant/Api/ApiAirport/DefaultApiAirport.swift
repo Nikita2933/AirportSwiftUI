@@ -9,8 +9,44 @@ import Foundation
 import Domain
 import Alamofire
 
-public final class DefaultApiAirport: ApiArrival, ApiDeparture {
+public final class DefaultApiAirport: ApiArrival, ApiDeparture, ApiPagination {
+    
     public init() { }
+    
+    public func getListPagination(offset: Int, limit: Int) async throws -> ApiPaginationModel {
+        try await withUnsafeThrowingContinuation { continuation in
+            let parameterDictionary = [
+                "offset" : offset.description,
+                "limit" : limit.description
+            ]
+
+            let header: HTTPHeaders = .init([.accept("text/html; charset=utf-8")])
+
+            AF.request(
+                ApiAirportConfiguration.shared.paginationPath,
+                method: .get,
+                parameters: parameterDictionary,
+                encoder: URLEncodedFormParameterEncoder.default,
+                headers: header,
+                interceptor: nil,
+                requestModifier: .none
+            ).responseData { response in
+                if let data = response.data {
+                    do {
+                        let apiPaginationModel = try JSONDecoder().decode(ApiPaginationModel.self, from: data)
+                        continuation.resume(returning: apiPaginationModel)
+                    } catch let error {
+                        print(error.localizedDescription)
+                        continuation.resume(throwing: error)
+                    }
+                }
+                if let error = response.error {
+                    continuation.resume(throwing: error)
+                    return
+                }
+            }
+        }
+    }
     
     public func getListArrival(args: GetAirportListArgs) async throws -> ApiArrivalModel {
         try await withUnsafeThrowingContinuation { continuation in

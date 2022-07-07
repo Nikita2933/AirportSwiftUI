@@ -28,4 +28,8 @@ final class ApiAirportConfiguration {
     var flightPath: URL {
         apiPath.appendingPathComponent("flights/online")
     }
+    
+    var paginationPath: URL {
+        apiPath.appendingPathComponent("flights/regular")
+    }
 }

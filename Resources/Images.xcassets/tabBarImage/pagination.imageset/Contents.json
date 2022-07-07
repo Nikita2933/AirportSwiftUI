@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "book-open-page-variant-outline.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

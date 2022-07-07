@@ -19,5 +19,9 @@ extension Resolver {
         register (WeatherViewModel.self) {
             .init(weatherRepository: resolve())
         }
+        register(PaginationViewModel.self) {
+            .init(paginationRepository: resolve(),
+                  loadManager: resolve())
+        }
     }
 }

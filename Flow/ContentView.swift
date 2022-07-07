@@ -33,6 +33,13 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $tabState) {
+            PaginationView()
+                .tabItem {
+                    Text(LocalizableStrings.Pagination.title)
+                    Image(uiImage: Resources.Images.pagination.image)
+                }
+                .tag(RootTabView.pagination)
+            
             ArrivalPageView()
                 .tabItem({
                     Text(LocalizableStrings.Arrival.title)

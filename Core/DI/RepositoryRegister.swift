@@ -29,5 +29,10 @@ extension Resolver {
                 apiWeather: resolve()
             )
         }
+        register(PaginationRepository.self) {
+            DefaultPaginationRepository(
+                apiPagination: resolve()
+            )
+        }
     }
 }

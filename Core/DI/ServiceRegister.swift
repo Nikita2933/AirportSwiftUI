@@ -6,6 +6,7 @@
 //
 
 import Persistant
+import CoreAirport
 import RealmSwift
 import Resolver
 
@@ -28,6 +29,12 @@ extension Resolver {
         }
         register(ApiWeather.self) {
             DefaultApiWeather()
+        }
+        register(ApiPagination.self) {
+            DefaultApiAirport()
+        }
+        register(PaginationLoadManager.self) {
+            .init(params: PaginationServiceParams())
         }
     }
 }

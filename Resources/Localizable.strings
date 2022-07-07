@@ -6,6 +6,11 @@
   
 */
 
+"Pagination.Title" = "Регулярные рейсы";
+"Pagination.timeDeparture" = "Отправление: %@";
+"Pagination.timeArrival" = "Прибытие: %@";
+"Pagination.period" = "Период %1$@ - %2$@";
+"Pagination.craft" = "Судно %@";
 "Arrival.Title" = "Прилёт";
 "Departure.Title" = "Вылет";
 "Weather.Title" = "Погода";

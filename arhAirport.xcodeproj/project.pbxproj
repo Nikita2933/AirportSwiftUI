@@ -44,6 +44,8 @@
 		A8A26BFC281FB8A400B5365B /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = A8A26BFB281FB8A400B5365B /* Resolver */; };
 		A8AC6CD827F8485C00CD0AFC /* ArrivalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC6CD727F8485C00CD0AFC /* ArrivalDetailView.swift */; };
 		A8AC6CDA27F8486500CD0AFC /* ArrivalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC6CD927F8486500CD0AFC /* ArrivalDetailViewModel.swift */; };
+		A8BCAEB42876F91700F71C66 /* PaginationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BCAEB32876F91700F71C66 /* PaginationViewModel.swift */; };
+		A8BCAEB62876F92D00F71C66 /* PaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BCAEB52876F92D00F71C66 /* PaginationView.swift */; };
 		A8EA13372836B1AA000336BE /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = A8EA13362836B1AA000336BE /* Domain */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		A8A26BEF281EAD9C00B5365B /* arhAirport--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "arhAirport--iOS--Info.plist"; sourceTree = "<group>"; };
 		A8AC6CD727F8485C00CD0AFC /* ArrivalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDetailView.swift; sourceTree = "<group>"; };
 		A8AC6CD927F8486500CD0AFC /* ArrivalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDetailViewModel.swift; sourceTree = "<group>"; };
+		A8BCAEB32876F91700F71C66 /* PaginationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationViewModel.swift; sourceTree = "<group>"; };
+		A8BCAEB52876F92D00F71C66 /* PaginationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,7 @@
 				A80623F1280B071F0092F852 /* SupportView */,
 				A86C660027D63D2D00FE38A6 /* RootTabView.swift */,
 				A86C65CA27D5EFF900FE38A6 /* arhAirportApp.swift */,
+				A8BCAEB02876F8DE00F71C66 /* Pagination */,
 				A808B4F8280AC2B4006E7C44 /* Model */,
 				A86C65E827D5F12400FE38A6 /* Arrival */,
 				A86C65E927D5F13800FE38A6 /* Departure */,
@@ -273,6 +278,15 @@
 				A8AC6CD927F8486500CD0AFC /* ArrivalDetailViewModel.swift */,
 			);
 			path = ArrivalDetail;
+			sourceTree = "<group>";
+		};
+		A8BCAEB02876F8DE00F71C66 /* Pagination */ = {
+			isa = PBXGroup;
+			children = (
+				A8BCAEB32876F91700F71C66 /* PaginationViewModel.swift */,
+				A8BCAEB52876F92D00F71C66 /* PaginationView.swift */,
+			);
+			path = Pagination;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A80623E1280ADD210092F852 /* swiftgen.yml in Sources */,
+				A8BCAEB42876F91700F71C66 /* PaginationViewModel.swift in Sources */,
 				A86C65F527D5F38B00FE38A6 /* ArrivalViewModel.swift in Sources */,
 				A8546871281C068300B73191 /* ResolverRegister.swift in Sources */,
 				A86C660127D63D2D00FE38A6 /* RootTabView.swift in Sources */,
@@ -415,6 +430,7 @@
 				A8AC6CDA27F8486500CD0AFC /* ArrivalDetailViewModel.swift in Sources */,
 				A80623E6280AE09A0092F852 /* LocalizableStrings.swift in Sources */,
 				A86C65F027D5F21400FE38A6 /* DepartureViewModel.swift in Sources */,
+				A8BCAEB62876F92D00F71C66 /* PaginationView.swift in Sources */,
 				A86C65F727D5F3A200FE38A6 /* WeatherView.swift in Sources */,
 				A808B4FD280AC9C8006E7C44 /* DepartureDetailView.swift in Sources */,
 				A808B4FA280AC2C6006E7C44 /* Constants.swift in Sources */,

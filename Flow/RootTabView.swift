@@ -8,7 +8,7 @@
 import Foundation
 
 public enum RootTabView {
-    case arrival, departure, weather, contact
+    case pagination, arrival, departure, weather, contact
 }
 
 public enum PageTabView: Int {
