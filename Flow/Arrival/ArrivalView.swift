@@ -120,7 +120,7 @@ struct ArrivalCell: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("\(model.departureTime) \(model.flyDirection)")
+                Text("\(model.departureTime) \(model.airportDeparture)")
                 Text(model.reisName)
             }
             Spacer()

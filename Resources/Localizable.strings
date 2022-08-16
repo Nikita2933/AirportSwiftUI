@@ -6,12 +6,14 @@
   
 */
 
-"Pagination.Title" = "Регулярные рейсы";
+"Pagination.Title" = "Рейсы";
 "Pagination.timeDeparture" = "Отправление: %@";
 "Pagination.timeArrival" = "Прибытие: %@";
 "Pagination.period" = "Период %1$@ - %2$@";
 "Pagination.craft" = "Судно %@";
 "Arrival.Title" = "Прилёт";
+"Airport.status" = "Cтатус: %@";
+"Airport.aviaCompany" = "Авиокомпания: %@";
 "Departure.Title" = "Вылет";
 "Weather.Title" = "Погода";
 "Weather.temp" = "%@ C\U00B0";

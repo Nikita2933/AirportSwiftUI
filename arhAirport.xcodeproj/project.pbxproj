@@ -79,7 +79,6 @@
 		A86C65FC27D5F44E00FE38A6 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		A86C660027D63D2D00FE38A6 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		A872AF3F282FA71E007B4958 /* ServiceRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegister.swift; sourceTree = "<group>"; };
-		A8A26BEF281EAD9C00B5365B /* arhAirport--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "arhAirport--iOS--Info.plist"; sourceTree = "<group>"; };
 		A8AC6CD727F8485C00CD0AFC /* ArrivalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDetailView.swift; sourceTree = "<group>"; };
 		A8AC6CD927F8486500CD0AFC /* ArrivalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDetailViewModel.swift; sourceTree = "<group>"; };
 		A8BCAEB32876F91700F71C66 /* PaginationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationViewModel.swift; sourceTree = "<group>"; };
@@ -177,7 +176,6 @@
 		A86C65C427D5EFF800FE38A6 = {
 			isa = PBXGroup;
 			children = (
-				A8A26BEF281EAD9C00B5365B /* arhAirport--iOS--Info.plist */,
 				A854686E281C05BA00B73191 /* Core */,
 				A80623D2280ADA540092F852 /* swiftgen.yml */,
 				A84D0C50281BDBF6002A424B /* .gitignore */,

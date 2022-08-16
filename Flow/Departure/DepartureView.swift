@@ -31,7 +31,7 @@ struct DeparturePageView: View {
                                     let minX = -proxy.frame(in: .global).minX
                                     withAnimation {
                                         if minX != 0 {
-                                            self.offset = -proxy.frame(in: .global).minX
+                                            self.offset = -proxy.frame(in: .local).minX
                                         }
                                     }
                                 }
@@ -120,7 +120,7 @@ struct DepartureCell: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("\(model.departureTime) \(model.flyDirection)")
+                Text("\(model.departureTime) \(model.airportArrival)")
                 Text(model.reisName)
             }
             Spacer()

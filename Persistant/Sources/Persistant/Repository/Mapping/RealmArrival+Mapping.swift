@@ -12,10 +12,13 @@ import Domain
 extension ArrivalDataList {
     public func toArrivalModel() -> ArrivalModel {
         .init(
+            arrivalTime: arrivalTime,
             departureTime: departureTime,
             aviaCompany: company,
             reisName: flight,
-            flyDirection: airportDeparture,
+            craft: craft,
+            airportDeparture: airportDeparture,
+            airportArrival: airportArrival,
             statusLabel: remark
         )
     }

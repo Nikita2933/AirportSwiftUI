@@ -45,6 +45,7 @@ struct PaginationView: View {
                         }
                     }
                 }
+                .listStyle(.plain)
                 .refreshable {
                     Task {
                         await viewModel.reloadScreen()
